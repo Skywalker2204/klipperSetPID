@@ -1,7 +1,14 @@
 # klipperSetPID
-small module to include in klipper extras to enable PID setting via gCode
+Especially for huge beds or partially heatable beds the PID settings may change with temperature.
+The changing of the PID Values via the GCode is not yet implemented , hence a
+small module to include in klipper extras was written. Just copy the pid_set.py file in your klippy/extras folder and change your printer.cfg file.
+```
+[pid_set]
+```
 
-copy the .py file in your klippy/extras folder
+With the enabled module you can use following command:
 
-include [pid_set] in your config file and the command
-SET_PID HEATER=heater KI=, KP=, KD= will work and set a new control mecahnism to your heater.
+```
+SET_PID HEATER=heater KI=100, KP=0.5, KD= 2000
+```
+Therefore, the control of your selected heater is changed
